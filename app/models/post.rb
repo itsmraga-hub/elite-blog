@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   # Validations
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 250 }
 
   # Update by use author associated with post
   def posts_number_update
