@@ -21,7 +21,21 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it '' do
+  it 'postCounter greater than or === 0' do
+    subject.posts_counter = -1
+    expect(subject).to_not be_valid
+  end
 
+  it 'Should have nil posts after adding to posts' do
+    expect(subject.posts_counter).to eq nil
+  end
+
+  it 'Should return 3 posts after creating more than 3 posts' do
+    Post.create(author: subject, title: 'Hello', text: 'This is my first post')
+    Post.create(author: subject, title: 'Hello again', text: 'This is my second post')
+    Post.create(author: subject, title: 'Hello', text: 'This is my first post')
+    Post.create(author: subject, title: 'Hello again', text: 'This is my second post')
+    Post.create(author: subject, title: 'Hello', text: 'This is my first post')
+    expect(subject.latest_three.length).to eq 3
   end
 end
