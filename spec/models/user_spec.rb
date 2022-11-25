@@ -11,16 +11,6 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  # it 'Photo should be present' do
-  #   subject.photo = nil
-  #   expect(subject.photo).to_not be_valid
-  # end
-
-  # it 'Bio should be present' do
-  #   subject.bio = nil
-  #   expect(subject.bio).to_not be_valid
-  # end
-
   it 'postCounter greater than or === 0' do
     subject.posts_counter = -1
     expect(subject).to_not be_valid
