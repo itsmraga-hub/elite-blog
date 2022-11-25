@@ -7,7 +7,7 @@ RSpec.describe Post, type: :model do
 
     @post = Post.create(author: @user, title: 'Hello', text: 'This is my first post')
   end
-  
+
   before { subject.save }
 
   it 'Post title should be present' do
@@ -34,16 +34,16 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Should return n posts after creating n posts' do
-    Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
-    Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
+    Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+    Comment.create(post: @post, author: @user, text: 'Hi Tom!')
     expect(@post.comments_counter).to eq 2
   end
 
   it 'Should return 5 comments after creating more than 5 posts' do
-    Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
-    Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
-    Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
-    Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
+    Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+    Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+    Comment.create(post: @post, author: @user, text: 'Hi Tom!')
+    Comment.create(post: @post, author: @user, text: 'Hi Tom!')
     expect(@post.recent_five_comments.length).to eq 4
   end
 end

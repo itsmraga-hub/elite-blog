@@ -6,7 +6,7 @@ RSpec.describe Comment, type: :model do
 
     @post = Post.create(author: @user, title: 'Hello', text: 'This is my first post')
 
-    @comment = Comment.create(post: @post, author: @user, text: 'Hi Tom!' )
+    @comment = Comment.create(post: @post, author: @user, text: 'Hi Tom!')
   end
 
   it 'Comments counter will be incremented' do

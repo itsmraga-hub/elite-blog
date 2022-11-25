@@ -6,7 +6,7 @@ RSpec.describe Comment, type: :model do
 
     @post = Post.create(author: @post, title: 'Hello', text: 'This is my first post')
 
-    @comment = Comment.create(post: @comment, author: @user, text: 'Hi Tom!' )
+    @comment = Comment.create(post: @comment, author: @user, text: 'Hi Tom!')
 
     @like = Like.create(author: @author, post: @post)
   end
