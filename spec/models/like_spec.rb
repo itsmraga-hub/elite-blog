@@ -11,7 +11,7 @@ RSpec.describe Comment, type: :model do
     @like = Like.create(author: @author, post: @post)
   end
 
-  it 'likesCounter wi' do
+  it 'Comments author should equal to user who made the comment' do
     expect(@comment.author).to eq @user
   end
 end
