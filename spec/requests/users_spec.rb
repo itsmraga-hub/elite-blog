@@ -13,9 +13,9 @@ RSpec.describe 'Users', type: :request do
 
   it 'Body incudes correct placeholder text: Users' do
     get '/users/'
-    expect(response.body).to include("Users")
+    expect(response.body).to include('Users')
   end
-  
+
   it 'returns http success' do
     get '/users/1'
     expect(response).to have_http_status(:success)
@@ -28,6 +28,6 @@ RSpec.describe 'Users', type: :request do
 
   it 'Body incudes correct placeholder text' do
     get '/users/1'
-    expect(response.body).to include("User 1")
+    expect(response.body).to include('User 1')
   end
 end

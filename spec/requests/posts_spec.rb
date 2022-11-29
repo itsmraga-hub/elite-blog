@@ -13,7 +13,7 @@ RSpec.describe 'Posts', type: :request do
 
   it 'Body incudes correct placeholder text: Posts' do
     get '/users/1/posts/'
-    expect(response.body).to include("Posts")
+    expect(response.body).to include('Posts')
   end
 
   it 'returns http success' do
@@ -28,6 +28,6 @@ RSpec.describe 'Posts', type: :request do
 
   it 'Body incudes correct placeholder text' do
     get '/users/1/posts/1'
-    expect(response.body).to include("Post 1")
+    expect(response.body).to include('Post 1')
   end
 end
