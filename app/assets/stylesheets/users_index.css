@@ -102,6 +102,10 @@
   border: 1px solid rgba(0, 0, 0, 1);
 }
 
+.comments-container li {
+  list-style: none;
+}
+
 .post-header {
   padding: 1em;
   width: 100%;
