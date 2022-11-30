@@ -32,7 +32,6 @@
   display: flex;
   gap: 2em;
   justify-content: space-between;
-  
   border: 1px solid rgba(0, 0, 0, 1);
 }
 
@@ -100,9 +99,6 @@
 .comments-container {
   padding: 1em;
   border: 1px solid rgba(0, 0, 0, 1);
-}
-
-.comments-container li {
   list-style: none;
 }
 
