@@ -1,1 +1,9 @@
-<h1>Post 1</h1>
+<div>
+  <h2>Post #<span><%= @post.id %></span> by <span><%= @user.name %></span></h2>
+  <p><%= @post.text %></p>
+  <ul>
+    <% @post_comments.each do |comment| %>
+      <li><span><%= comment.author.name%> </span><%= comment.text %></li>
+    <% end %>
+  </ul>
+</div>
