@@ -1,1 +1,16 @@
-<h1>Posts</h1>
+<div>
+  <h2><%= @user.name %></h2>
+  <p><%= @user.posts_counter %></p>
+</div>
+<div>
+  <ul>
+    <% @user_posts.each_with_index do |post, i| %>
+      <li>
+        <h3><span><%= i + 1 %></span> <%= post.title %></h3>
+        <p><%= post.text %></p>
+        <p>Comments: <%= post.comments_counter %></p>
+        <p>Likes: <%= post.likes_counter %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
