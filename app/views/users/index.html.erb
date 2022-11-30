@@ -1,7 +1,5 @@
-<h1>Users#index</h1>
-<ul>
-  <% @users.all.each do |user| %>
-    Name: <%= user.name %>
-    Number_of_posts: <%= user.posts_counter %>
-  <% end %>
-</ul>
+<section>
+  <ul>
+    <%= render @users %>
+  </ul>
+</section>
