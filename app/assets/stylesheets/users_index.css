@@ -1,0 +1,115 @@
+.main-container {
+  font-size: 2em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.main-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.main-container ul li.user {
+  list-style-type: none;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  padding: 1em;
+}
+
+.user img {
+  padding: 2em;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.user div {
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.user div h2 a {
+  text-decoration: none;
+}
+
+.user div .no_of_posts {
+  align-self: flex-end;
+}
+
+.bio {
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.posts ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.posts ul li {
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.comments-likes {
+  text-align: right;
+}
+
+.btn {
+  width: 100%;
+  margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.see-all-posts {
+  width: max-content;
+  padding: 8px 10px;
+}
+
+.posts_list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.single_post {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.comments-container {
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.post-header {
+  padding: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.post-header div {
+  align-self: flex-end;
+}
