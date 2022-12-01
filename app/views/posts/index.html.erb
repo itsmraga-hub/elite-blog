@@ -19,6 +19,9 @@
             <span><small>Likes: <%= post.likes_counter %></small></span>
           </div>
         </div>
+        <%= link_to "/users/#{@user.id}/posts/new" do %>
+          <button>Add new like</button>
+        <% end %>
         <ul class="comments-container">
           <% post.recent_five_comments.each do |comment| %>
             <li>
@@ -33,4 +36,9 @@
       </li>
     <% end %>
   </ul>
+</section>
+<section>
+  <%= link_to "/users/#{@user.id}/posts/new" do %>
+    <button>Add new post</button>
+  <% end %> 
 </section>
