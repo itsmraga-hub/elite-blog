@@ -1,1 +1,36 @@
-<h1>Posts</h1>
+<section>
+  <ul>
+    <%= render @user %>
+  </ul>
+</section>
+<section class="">
+  <ul class="posts_list">
+    <% @user.posts.each_with_index do |post, i| %>
+      <li class="single_post">
+        <div class="post-header">
+          <h3>Post #<span><%= i + 1 %> </span>
+            <%= link_to "/users/#{@user.id}/posts/#{post.id}" do %>
+              <%= post.title %>
+            <% end %> 
+          </h3>
+          <p><%= post.text %>...</p>
+          <div>
+            <span><small>Comments: <%= post.comments_counter %></small></span>
+            <span><small>Likes: <%= post.likes_counter %></small></span>
+          </div>
+        </div>
+        <ul class="comments-container">
+          <% post.recent_five_comments.each do |comment| %>
+            <li>
+              <p><%= comment.author.name %>:
+                <span>
+                  <%= comment.text %>
+                </span>
+              </p>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</section>

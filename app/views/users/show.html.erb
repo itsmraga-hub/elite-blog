@@ -1,1 +1,30 @@
-<h1>User 1</h1>
+<section>
+  <ul>
+    <%= render @user %>
+  </ul>
+</section>
+<section class="bio">
+  <h3>Bio</h3>
+  <p><%= @user.bio %></p>
+</section>
+<section class="posts">
+  <ul>
+    <% @latest_three_posts.each_with_index do |post, i| %>
+      <li>
+        <h3><%= post.title %> <%= i + 1 %></h3>
+        <p><%= post.text %>...</p>
+        <div class="comments-likes">
+          <span><small>Comments: <%= post.comments_counter %></small>,</span>
+          <span><small>Likes: <%= post.likes_counter %></small></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="btn">
+    <button class="see-all-posts">
+    <%=link_to "#{@user.id}/posts/" do %>
+      See All Posts
+    <% end %>
+    </button>
+  </div>
+</section>
