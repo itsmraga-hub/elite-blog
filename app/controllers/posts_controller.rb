@@ -11,4 +11,9 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
+  def create
+    render :new
+    @post = current_user.posts.new()
+  end
 end
