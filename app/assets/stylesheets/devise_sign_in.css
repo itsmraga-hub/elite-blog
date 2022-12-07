@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-.login-container,
+.login-container form,
 .sign_in-container form {
   width: 100%;
   display: flex;
@@ -22,8 +22,8 @@
 }
 
 .field input[type="email"],
-input[type="password"],
-input[type="text"] {
+.field input[type="password"],
+.field input[type="text"] {
   width: 80%;
 }
 
