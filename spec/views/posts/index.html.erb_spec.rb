@@ -1,14 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'users/:user_id/posts/show', type: :feature do
-  before (:each) do
-    @first_user = User.create(name: 'William Raga', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Ruby developer from Kenya')
-    @second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+  before(:each) do
+    @first_user = User.create(name: 'William Raga', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Ruby developer from Kenya')
+    @second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                               bio: 'Teacher from Mexico.')
     @first_post = Post.create(author: @first_user, title: 'First Post', text: 'This is my first post')
     @second_post = Post.create(author: @first_user, title: 'Second Post', text: 'This is my second post')
     @third_post = Post.create(author: @first_user, title: 'Third post', text: 'This is my third post')
-    @first_coment = Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!' )
-    @second_comment = Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!' )
+    @first_coment = Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!')
+    @second_comment = Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!')
     Like.create(post: @first_post, author: @first_user)
 
     visit user_posts_path(@first_user)

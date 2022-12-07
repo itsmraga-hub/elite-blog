@@ -2,18 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'users/index.html.erb', type: :feature do
   # pending "add some examples to (or delete) #{__FILE__}"
-  before (:each) do
-    @first_user = User.create(name: 'William Macharia Raga', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Ruby developer from Kenya')
-    @second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-    @third_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+  before(:each) do
+    @first_user = User.create(name: 'William Macharia Raga', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Ruby developer from Kenya')
+    @second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                               bio: 'Teacher from Mexico.')
+    @third_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Teacher from Poland.')
     @first_post = Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
     @second_post = Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
-    Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!' )
-    Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!' )
+    Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!')
+    Comment.create(post: @first_post, author: @second_user, text: 'Hi Tom!')
     Like.create(post: @first_post, author: @first_user)
 
     @users = User.all
-
   end
   it 'user index shows all the user names' do
     visit users_path
@@ -31,7 +33,7 @@ RSpec.describe 'users/index.html.erb', type: :feature do
 
   it 'Shows the text \'Number of posts\' for all users' do
     visit users_path
-    @users.each do |user|
+    @users.each do |_user|
       expect(page).to have_content('Number of posts:')
     end
   end
