@@ -23,3 +23,10 @@
 body {
   font-size: 65%;
 }
+
+header {
+  display: flex;
+  font-size: 2em;
+  padding: 1em;
+  justify-content: space-between;
+}

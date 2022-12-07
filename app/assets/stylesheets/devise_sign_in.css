@@ -1,0 +1,28 @@
+.login-container, .sign_in-container {
+  width: 100%;
+}
+
+.login-container, .sign_in-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.field {
+  width: 100%;
+}
+
+.field input {
+  padding: 1em;
+}
+
+.field input[type="email"], input[type="password"], input[type="text"] {
+  width: 80%;
+}
+
+.actions input[type="submit"] {
+  padding: 10px 8px;
+}
