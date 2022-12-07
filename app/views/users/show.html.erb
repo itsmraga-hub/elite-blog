@@ -11,7 +11,11 @@
   <ul>
     <% @latest_three_posts.each_with_index do |post, i| %>
       <li>
-        <h3><%= post.title %> <%= i + 1 %></h3>
+        <h3>
+          <%= link_to "/users/#{@user.id}/posts/#{post.id}" do %>
+              <%= post.title %>
+          <% end %> 
+        </h3>
         <p><%= post.text %>...</p>
         <div class="comments-likes">
           <span><small>Comments: <%= post.comments_counter %></small>,</span>
