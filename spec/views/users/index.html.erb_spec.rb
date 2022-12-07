@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'users/index.html.erb', type: :feature do
   # pending "add some examples to (or delete) #{__FILE__}"
   before (:each) do
-    @first_user = User.create(name: 'William Raga', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Ruby developer from Kenya')
+    @first_user = User.create(name: 'William Macharia Raga', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Ruby developer from Kenya')
     @second_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     @third_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
     @first_post = Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
