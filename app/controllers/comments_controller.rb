@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:user_id])
+    # user = User.find(params[:user_id])
     comment = Comment.find(params[:post_id])
-    post = Post.find(params[:id])
+    # post = Post.find(params[:id])
     if comment.destroy
       'Comment deleted'
     else
