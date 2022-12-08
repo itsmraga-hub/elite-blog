@@ -7,13 +7,27 @@
     </div>
     <p><%= @post.text %></p>
   </div>
+  <div>
+    <% if can? :destroy, @post %>
+      <%= button_to "Delete post", user_post_path, method: :delete %>
+    <% end %>
+  </div>
   <%= render "likes/like" %>
   <ul class="comments-container">
     <% @post.recent_five_comments.each do |comment| %>
-      <li><span><%= comment.author.name %>:  </span><%= comment.text %></li>
+      <li>
+        <div>
+          <span><%= comment.author.name %>:  </span><%= comment.text %>
+        </div>
+        <div>
+          <% if can? :destroy, comment %>
+            <%= button_to "Delete comment", user_post_comment_path(@user, @post, comment), method: :delete %>
+          <% end %>
+        </div>
+      </li>
     <% end %>
   </ul>
-  <%= link_to "/users/#{@user.id}/posts/#{@post.id}/comments/new" do %>
-    <button>Add comment</button>
+  <%= button_tag do %>
+    <%= link_to 'Comment', new_user_post_comment_path(@user, @post) %>
   <% end %>
 </section>
