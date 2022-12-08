@@ -10,16 +10,26 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post_new = Post.new
   end
 
   def create
-    @post = Post.new(author: current_user, **post_params)
-    if @post.save
-      redirect_to root_path notice: 'Post saved'
+    post = Post.new(author: current_user, **post_params)
+    if post.save
+      redirect_to user_posts_url notice: 'Post saved'
     else
       render :new
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    if post.destroy
+      'Post deleted'
+    else
+      'Could not delete post'
+    end
+    redirect_to user_posts_path
   end
 
   private

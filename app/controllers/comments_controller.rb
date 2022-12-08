@@ -12,6 +12,18 @@ class CommentsController < ApplicationController
     redirect_to user_post_path(current_user.id, post.id), notice: 'Comment saved'
   end
 
+  def destroy
+    # user = User.find(params[:user_id])
+    comment = Comment.find(params[:post_id])
+    # post = Post.find(params[:id])
+    if comment.destroy
+      'Comment deleted'
+    else
+      flash[:error] = 'Could not delete comment'
+    end
+    redirect_to user_post_path
+  end
+
   private
 
   def comment_params
