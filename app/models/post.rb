@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :likes
   belongs_to :author, class_name: 'User'
   after_save :posts_number_update
+  after_destroy :update_posts_counter
 
   # Validations
   validates :title, presence: true, length: { minimum: 1, maximum: 250 }
