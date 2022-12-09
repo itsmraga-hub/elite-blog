@@ -13,7 +13,7 @@ class Api::V1::UsersController < Api::V1::ApplicationController
   def api_token
     @user = User.find(params[:id])
     respond_to do |format|
-      format.json { render :json => @user.api_token, status: :ok }
+      format.json { render json: @user.api_token, status: :ok }
     end
   end
 end

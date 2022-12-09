@@ -4,11 +4,11 @@ class Api::V1::ApplicationController < ActionController::API
   before_action :authenticate_user!
 
   private
-  
+
   def authentication_with_token
-    if params[:api_token]
-      user = User.find_by_api_token(params[:api_token])
-      sign_in(user)
-    end
+    return unless params[:api_token]
+
+    user = User.find_by_api_token(params[:api_token])
+    sign_in(user)
   end
 end
