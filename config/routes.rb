@@ -11,6 +11,24 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [] do
+    member do
+      get 'api_token'
+    end
+  end
+  # API routes
+  namespace :api do
+    namespace :v1 do
+      # post 'auth/login', to 'authenticate#login'
+      resources :users do 
+        resources :posts do 
+          resources :comments
+          resources :likes
+        end
+      end
+    end
+  end
+    
   # Defines the root path route ("/")
   # root "users#index"
 end
