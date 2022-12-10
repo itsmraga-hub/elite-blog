@@ -16,6 +16,7 @@
   <body>
     <header>
     <% if user_signed_in? %>
+      <%= link_to 'GET YOUR API TOKEN HERE', api_token_user_path(current_user) %>
       <p><b>Welcome, </b><span><%= current_user.name %></span></p>
       <%= button_to "logout", destroy_user_session_path, method: :delete  %>
     <% end %>
