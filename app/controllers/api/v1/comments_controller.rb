@@ -16,7 +16,7 @@ class Api::V1::CommentsController < Api::V1::ApiController
   def create
     @user = User.find(params[:user_id])
     post = Post.find(params[:post_id])
-    # comment = Comment.create(author: current_user, post: post, **comment_params)
+    comment = Comment.create(author: current_user, post: post, comment_params)
     comment = @user.comments.new(post:, **comment_params)
     return unless comment.save
 
